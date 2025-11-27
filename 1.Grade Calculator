@@ -1,0 +1,30 @@
+def calculate_grade():
+    print("GRADE CALCULATOR")
+    print("----------------")
+    
+    n = int(input("How many Assignments do you wan me to enter? "))
+    total_score = 0
+    total_weight = 0
+    
+    for i in range(1,n+1):
+        score = float(input(f"Score for assignments #{i}:"))
+        weight= float(input(f"Weight for assignments #{i} (as perecent):"))
+        total_score += score*(weight/100)
+        total_weight += weight
+        
+    if total_weight != 100:
+            print(f"\nWarning: Total weight is {total_weight}%,not 100%.")
+            final_grade = round(total_score,2)
+            print("\n Your final grade is:",final_grade)
+    if final_grade >=90:
+             print("Letter Grade:A")   
+    elif final_grade >=80:
+                 print("Letter Grade:B")
+    elif final_grade >=70:
+                 print("Letter Grade:C")
+    elif final_grade >=60:
+                 print("Letter Grade:D")
+    else:
+                 print("Letter Grade:F")
+calculate_grade()
+    
